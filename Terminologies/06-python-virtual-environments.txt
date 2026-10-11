@@ -1,0 +1,54 @@
+PYTHON VIRTUAL ENVIRONMENTS — QUICK REFERENCE
+=============================================
+
+Virtual environment
+An isolated Python environment for a project. It keeps that project's installed packages separate from other projects and from the base Python installation.
+
+Why use one?
+Different projects may require different package versions. A virtual environment reduces dependency conflicts and makes project setup easier to reproduce.
+
+Create a virtual environment
+Run these commands from the project directory:
+    python3 -m venv .venv
+
+On some systems, `python` rather than `python3` is the correct command. The `venv` module creates the environment; `.venv` is simply a common directory name.
+
+Activate it
+macOS / Linux, using bash or zsh:
+    source .venv/bin/activate
+
+Windows Command Prompt:
+    .venv\Scripts\activate.bat
+
+Windows PowerShell:
+    .venv\Scripts\Activate.ps1
+
+After activation, the terminal often displays `(.venv)`. The `python` and `pip` commands should then refer to the environment.
+
+Install packages inside the environment
+    python -m pip install requests
+
+Check the interpreter
+    python --version
+    python -m pip --version
+    which python
+
+On Windows, use `where python` instead of `which python`.
+
+Save dependencies
+    python -m pip freeze > requirements.txt
+
+Install dependencies on another machine
+    python -m pip install -r requirements.txt
+
+Deactivate
+    deactivate
+
+Delete and recreate
+Deactivate the environment, then delete the `.venv` directory and recreate it if needed. Deleting `.venv` removes its installed packages, not your project source files, provided they are stored outside that directory.
+
+Git practice
+Usually add `.venv/` to `.gitignore`. Do not upload the entire virtual environment to GitHub; share dependency information such as `requirements.txt` instead.
+
+Remember
+A virtual environment does not install Python itself in every setup, and it does not automatically install your project's packages. Activate the environment and install the dependencies you need.

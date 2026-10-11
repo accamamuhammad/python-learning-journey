@@ -1,0 +1,70 @@
+GIT AND GITHUB — QUICK REFERENCE
+================================
+
+Git
+A distributed version control system that records changes to files over time. It lets you review history, compare versions, create branches, and collaborate without losing earlier work.
+
+GitHub
+An online platform for hosting Git repositories and collaborating through features such as pull requests, issues, code reviews, and project discussions. Git is the tool; GitHub is one service that hosts Git repositories.
+
+Repository (repo)
+A project directory tracked by Git, including its files and commit history.
+
+Working directory
+The files currently in your project folder.
+
+Staging area
+The place where you select changes to include in the next commit.
+
+Commit
+A saved snapshot of staged changes, identified by a unique hash and usually accompanied by a message.
+
+Branch
+An independent line of development. Branches let you work on a feature or experiment without immediately changing the main branch.
+
+Merge
+Combines changes from one branch into another.
+
+Clone
+Downloads a remote repository and its history to your computer.
+
+Remote
+A reference to a repository hosted elsewhere, commonly called `origin`.
+
+Push
+Sends local commits to a remote repository.
+
+Pull
+Fetches remote changes and integrates them into the current branch. `git pull` commonly performs a fetch followed by a merge or rebase, depending on configuration.
+
+Fetch
+Downloads information and commits from a remote without automatically integrating them into your current branch.
+
+Pull request (PR)
+A GitHub proposal to review and merge changes from one branch into another.
+
+`.gitignore`
+A file listing files or patterns Git should normally ignore, such as virtual environments, cache files, and secrets.
+
+Common commands
+- `git init` — start a Git repository in the current directory.
+- `git status` — show changed, staged, and untracked files.
+- `git add file.py` — stage a specific file.
+- `git add .` — stage changes under the current directory.
+- `git commit -m "Describe change"` — create a commit.
+- `git log --oneline` — show a compact commit history.
+- `git branch` — list branches.
+- `git switch -c feature-name` — create and switch to a branch.
+- `git clone URL` — copy a remote repository locally.
+- `git push` — upload local commits.
+- `git pull` — retrieve and integrate remote changes.
+
+Typical workflow
+1. Edit files.
+2. Run `git status`.
+3. Stage the intended changes with `git add`.
+4. Commit with a clear message.
+5. Push to GitHub when ready.
+
+Good practice
+Use meaningful commit messages, commit related changes together, never commit passwords/API keys, and add an appropriate `.gitignore`.

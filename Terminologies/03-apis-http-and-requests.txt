@@ -1,0 +1,75 @@
+APIs, HTTP, AND REQUESTS — QUICK REFERENCE
+=========================================
+
+API
+An Application Programming Interface: a defined way for software systems to communicate. A web API commonly lets a client request or modify data on a server.
+
+Client and server
+The client sends a request; the server processes it and returns a response. A browser, mobile app, or Python program can act as a client.
+
+Endpoint
+A specific URL or route where an API accepts requests, such as `/api/users/42`.
+
+HTTP
+Hypertext Transfer Protocol, the application-layer protocol commonly used for communication on the web.
+
+Request
+A message sent by a client. It commonly contains a method, URL, headers, and sometimes a body.
+
+Response
+The server's reply. It commonly contains a status code, headers, and sometimes a body.
+
+HTTP methods
+- `GET` — retrieve a resource.
+- `POST` — submit data, often to create a resource or trigger an operation.
+- `PUT` — replace a resource's representation.
+- `PATCH` — partially update a resource.
+- `DELETE` — request deletion of a resource.
+
+Status codes
+- `200 OK` — request succeeded.
+- `201 Created` — a resource was created.
+- `204 No Content` — succeeded with no response body.
+- `301` / `302` — redirect responses.
+- `400 Bad Request` — request is invalid or malformed.
+- `401 Unauthorized` — authentication is missing or invalid.
+- `403 Forbidden` — server refuses access.
+- `404 Not Found` — resource or route was not found.
+- `429 Too Many Requests` — rate limit reached.
+- `500 Internal Server Error` — unexpected server-side failure.
+- `503 Service Unavailable` — server is temporarily unable to handle the request.
+
+Headers
+Metadata sent with a request or response. Examples include `Content-Type`, `Authorization`, and `Accept`.
+
+Body
+The main content of a request or response, often JSON for APIs.
+
+JSON API response
+An API may return JSON text that a program parses into data structures such as dictionaries and lists in Python.
+
+Authentication vs authorization
+Authentication checks who or what is making a request. Authorization determines what that identity is allowed to do.
+
+API key / token
+A credential used to identify or authorize a client. Keep credentials private; do not commit them to a public repository.
+
+REST
+A widely used style for designing web APIs around resources and standard HTTP methods. Not every API is RESTful.
+
+Using Python `requests`
+Install with `python -m pip install requests`.
+Example:
+    import requests
+
+    response = requests.get(
+        "https://api.example.com/items",
+        timeout=10
+    )
+    response.raise_for_status()
+    data = response.json()
+
+`raise_for_status()` raises an exception for unsuccessful HTTP status codes. Set timeouts so a request does not wait indefinitely. Handle network errors and invalid responses in real applications.
+
+Important distinction
+HTTP is the communication protocol; an API is the interface/contract; an endpoint is a particular address within that interface.

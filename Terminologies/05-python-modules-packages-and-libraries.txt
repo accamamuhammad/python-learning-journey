@@ -1,0 +1,50 @@
+PYTHON MODULES, PACKAGES, AND LIBRARIES
+=======================================
+
+Module
+A Python file, usually ending in `.py`, that contains code such as variables, functions, and classes. You can import a module to reuse its code.
+
+Example:
+    import math
+    print(math.sqrt(25))
+
+Package
+A way to organize related Python modules under a common namespace, usually in a directory. Traditional packages commonly contain an `__init__.py` file, although Python also supports namespace packages without one.
+
+Library
+A general term for reusable code that provides functionality. A library may contain one or many modules and packages. The term is broad and is not one single strict Python file type.
+
+Relationship
+- Module: a unit of Python code, commonly one `.py` file.
+- Package: a namespace/organization containing related modules or subpackages.
+- Library: reusable functionality; it may consist of multiple modules and packages.
+
+Import examples
+- `import random` — import a module.
+- `from pathlib import Path` — import a name from a module.
+- `import requests` — import the installed `requests` package.
+- `import my_module` — import your own module when Python can find it.
+
+Standard library
+Modules and packages included with Python, such as `math`, `json`, `pathlib`, `datetime`, and `os`. You generally do not install these separately.
+
+Third-party package
+Code maintained outside Python's standard library, such as `requests` or `PyQt5`. It generally must be installed into the Python environment used by your project.
+
+pip
+A tool commonly used to install and manage Python packages from package indexes.
+
+Example commands
+- `python -m pip install requests` — install `requests` for the selected Python interpreter.
+- `python -m pip show requests` — show package information.
+- `python -m pip list` — list installed packages.
+- `python -m pip uninstall requests` — uninstall a package.
+
+`requirements.txt`
+A text file that records project dependencies, often with pinned versions. Create one from the current environment with `python -m pip freeze > requirements.txt`; review it before committing.
+
+Import troubleshooting
+- Confirm the package is installed in the environment running your script.
+- Confirm your editor/terminal uses the intended Python interpreter.
+- Avoid naming your own file after a standard or third-party module (for example, `json.py` or `requests.py`), because it can shadow the real module.
+- Install a package with `python -m pip`, not an unrelated `pip` command, to reduce interpreter mismatch.

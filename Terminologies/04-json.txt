@@ -1,0 +1,67 @@
+JSON — QUICK REFERENCE
+======================
+
+JSON
+JavaScript Object Notation: a text-based format for representing and exchanging structured data. It is language-independent and widely used by web APIs and configuration files.
+
+JSON data types
+- Object: a collection of key-value pairs, written with `{}`.
+- Array: an ordered list, written with `[]`.
+- String: text in double quotes.
+- Number: an integer or decimal number.
+- Boolean: `true` or `false`.
+- Null: `null`, meaning no value.
+
+Example JSON
+{
+  "name": "Ada",
+  "age": 28,
+  "is_student": false,
+  "skills": ["Python", "SQL"],
+  "address": null
+}
+
+Rules
+- Object keys must be strings in double quotes.
+- Strings use double quotes, not single quotes.
+- JSON uses `true`, `false`, and `null` in lowercase.
+- Standard JSON does not allow comments or trailing commas.
+- JSON is text; it is not the same thing as a Python dictionary, even though their structures look similar.
+
+Python's `json` module
+The built-in `json` module converts between JSON text and Python objects.
+
+- `json.loads(text)` — parse a JSON string into a Python object.
+- `json.dumps(value)` — convert a Python object into a JSON string.
+- `json.load(file)` — read JSON from an open file.
+- `json.dump(value, file)` — write JSON to an open file.
+
+Example: parse JSON text
+    import json
+
+    text = '{"name": "Ada", "active": true}'
+    data = json.loads(text)
+    print(data["name"])
+
+Example: read and write a JSON file
+    import json
+
+    with open("settings.json", "r", encoding="utf-8") as file:
+        settings = json.load(file)
+
+    with open("settings.json", "w", encoding="utf-8") as file:
+        json.dump(settings, file, indent=4)
+
+Common conversion mapping
+- JSON object → Python `dict`
+- JSON array → Python `list`
+- JSON string → Python `str`
+- JSON number → Python `int` or `float`
+- JSON `true` / `false` → Python `True` / `False`
+- JSON `null` → Python `None`
+
+Common errors
+`JSONDecodeError` means the text is not valid JSON. Check quotation marks, commas, braces, brackets, and the use of lowercase `true`, `false`, and `null`.
+
+JSON vs JSON file
+JSON is the data format. A `.json` file is a file containing data written in that format.

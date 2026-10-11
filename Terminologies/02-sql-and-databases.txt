@@ -1,0 +1,58 @@
+SQL AND DATABASES — QUICK REFERENCE
+===================================
+
+Database
+An organized collection of data that can be stored, queried, and updated.
+
+Relational database
+A database that organizes data into tables with rows and columns. Tables can be related through keys.
+
+Table
+A collection of related records, arranged in rows and columns.
+
+Row / record
+One entry in a table, such as one user or one order.
+
+Column / field
+A named attribute of each record, such as `email` or `created_at`.
+
+Schema
+The defined structure of a database: its tables, columns, data types, constraints, and relationships.
+
+SQL
+Structured Query Language, used to define, read, insert, update, and delete data in relational databases.
+
+Primary key
+A column or set of columns that uniquely identifies each row. A primary key must be unique and cannot be NULL.
+
+Foreign key
+A column or set of columns that refers to a key in another table, helping maintain relationships and referential integrity.
+
+Query
+An instruction sent to a database, often to retrieve or change data.
+
+CRUD
+The four common data operations: Create, Read, Update, and Delete.
+
+Common SQL statements
+- `SELECT name FROM users;` — retrieve selected columns.
+- `SELECT * FROM users;` — retrieve all columns.
+- `WHERE` — filter rows, e.g. `WHERE age >= 18`.
+- `ORDER BY created_at DESC` — sort results.
+- `LIMIT 10` — restrict the number of returned rows.
+- `INSERT INTO users (name) VALUES ('Ada');` — add a row.
+- `UPDATE users SET name = 'Ada' WHERE id = 1;` — change matching rows.
+- `DELETE FROM users WHERE id = 1;` — delete matching rows.
+- `CREATE TABLE ...` — define a table.
+- `JOIN` — combine related rows from multiple tables.
+- `GROUP BY` — group rows for aggregate calculations.
+- `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()` — common aggregate functions.
+
+Important terms
+- `NULL`: missing or unknown value; it is not the same as zero or an empty string.
+- Constraint: a rule enforced on data, such as `NOT NULL`, `UNIQUE`, or `CHECK`.
+- Index: a data structure that can speed up lookups, usually with storage and write-performance trade-offs.
+- Transaction: a group of database operations treated as one unit. ACID describes atomicity, consistency, isolation, and durability.
+
+Safety
+Use parameterized queries rather than building SQL by concatenating untrusted input. This helps prevent SQL injection. Be careful with `UPDATE` and `DELETE`: without a suitable `WHERE` clause, they can affect every row.
